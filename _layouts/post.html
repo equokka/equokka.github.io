@@ -1,0 +1,17 @@
+---
+layout: main
+---
+
+<article>
+    <time>{{ page.date | date: "%d.%m.%y" }}</time>
+    {% if page.author %}<span class="author">by {{ page.author }}</span>{% endif %}
+    {% if page.categories or page.category
+        %}<div class="cats">{% if page.category %}<a class="cat" href="">{{ page.category }}</a>{% elsif page.categories
+        %}{% for cat in page.categories %}<a class="cat" href="">{{ cat }}</a>{% endfor %}{%
+    endif %}</div>{% endif %}
+    {% if page.tags %}<div class="tags">{%
+        for tag in page.tags %}<a class="tag" href="">&num;{{ tag }}</a>{% endfor
+    %}</div>{% endif %}
+    <h1 id="post-title">{{ page.title }}</h1>
+    {{ content }}
+</article>

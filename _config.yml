@@ -1,0 +1,22 @@
+title: equokka
+description: >-
+  Cool
+baseurl: "" # e.g. /blog
+url: "http://equokka.github.io" # e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+
+collections:
+  posts:
+    output: true
+    permalink: /blog/:slug/
+
+defaults:
+  - scope:
+      path: _posts
+    values:
+      layout: post
+
+sass:
+    sass_dir: asset/_cool

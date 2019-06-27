@@ -1,0 +1,202 @@
+---
+
+---
+
+@import 'vars'
+
+*
+  margin:               0
+  padding:              0
+  border:               0
+  outline:              0
+  margin-block-start:   0
+  margin-block-end:     0
+  padding-inline-start: 0
+  padding-inline-end:   0
+  font-weight:     normal
+
+\:root
+  -webkit-font-smoothing: aliased
+  -moz-osx-font-smoothing: aliased
+  font-smoothing: aliased
+  -moz-osx-font-smooth: never
+  font-smooth: never
+
+body
+  font-family: $font-family
+  font-size: $font-size
+  line-height: $font-size
+  letter-spacing: 0
+  display: flex
+  flex-direction: column
+  background: $term-black
+  color: $term-white
+  overflow-y: scroll
+
+#wrap
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  width: 100%
+  margin: 0 auto
+  padding: 1em 2ch
+  box-sizing: border-box
+  @media screen and (min-width: $breakpoint + 22.5ch)  
+    width: $breakpoint
+
+header
+  margin-bottom: 1em
+  nav
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    a
+      padding-right: 1ch
+
+#header-title
+  display: inline-block
+  font-size: $font-size
+  font-weight: normal
+  margin-bottom: 1em
+  text-decoration: none
+  color: $term-magenta
+  &:hover
+    color: $term-magenta-bright
+  &:before
+    content: "¶ "
+
+.tags
+  display: flex
+  flex-wrap: wrap
+  .tag
+    padding-left: 1ch
+    &:first-child
+      padding-left: 0
+
+.author
+  text-align: right
+  float: right
+
+main
+  flex: 1
+
+footer
+  color: $term-black-bright
+  margin-top: 1em
+
+article > :last-child
+  margin-bottom: 0
+
+a
+  color: $term-yellow
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  &:visited
+    color: $term-yellow
+
+ul
+  list-style: none
+  margin-bottom: 1em
+  > li:before
+    content: '* '
+ol
+  padding-inline-start: 3ch
+  margin-bottom: 1em
+li > ul, li > ol
+  margin: 0 0 0 2ch
+li > p
+  display: inline-block // TODO fix this
+  margin: 0
+
+h1, h2, h3, h4, h5, h6
+  margin: 0 0 1em 0
+  font-size: $font-size
+  font-weight: normal
+  color: $term-white-bright
+  &:before
+    color: $term-magenta
+h1:before
+  content: "# "
+h2:before
+  content: "## "
+h3:before
+  content: "### "
+h4:before
+  content: "#### "
+h5:before
+  content: "##### "
+h6:before
+  content: "###### "
+
+code, kbd, samp
+  font-family: $font-family
+
+p
+  margin-bottom: 1em
+
+code
+  color: $term-black-bright
+  margin: 0
+  // border-bottom: 1px dotted $term-white-bright
+
+pre
+  color: $term-black-bright
+  margin: 1em 2ch
+
+div.highlight
+  overflow-x: auto
+  margin-bottom: 1em
+blockquote
+  border-left: .4ch solid $term-black-bright
+  margin-left: .8ch
+  padding-left: .8ch
+  p
+    margin: 0
+
+hr
+  height: 1pt
+  background: $term-black-bright
+  margin-bottom: calc(1em - 1pt)
+
+kbd
+  color: $term-black
+  background: $term-white
+
+figure
+  margin-bottom: 1em
+  margin-inline-start: 0
+  margin-inline-end: 0
+  img
+    display: block
+    max-width: 100%
+  figcaption
+    margin-left: 4ch
+    color: $term-black-bright
+    font-style: italic
+
+strong
+  font-weight: normal
+  color: $term-white-bright
+a strong, strong a
+  color: $term-yellow-bright
+
+.scrollup
+  float: right
+
+table
+  border-spacing: 0
+  border-collapse: collapse
+  *
+    vertical-align: top
+  thead
+    color: $term-white-bright
+  td
+    padding-right: 1ch
+    &:last-child
+      padding-right: 0
+  tr
+    /* I hate it but I don't care enough to find something better */
+    border-top: 1em solid transparent
+    &:last-child
+      border-top: 0
