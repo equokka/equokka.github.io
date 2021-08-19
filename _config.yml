@@ -1,8 +1,8 @@
-title: equokka
+title: metabismuth
 description: >-
   Cool
 baseurl: "" # e.g. /blog
-url: "http://equokka.github.io" # e.g. http://example.com
+url: "http://metabismuth.github.io" # e.g. http://example.com
 
 # Build settings
 markdown: kramdown
